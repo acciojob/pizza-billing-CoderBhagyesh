@@ -8,7 +8,7 @@ public class Pizza {
     private Boolean extraCheese;
     private Boolean extraTopping;
     private Boolean takeAway;
-    private Boolean pizza = false;
+    private Boolean isBill = false;
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -48,25 +48,26 @@ public class Pizza {
 
     public String getBill(){
         // your code goes
-        if(pizza==true) return "";
+        if(isBill==true) return "";
 
-        this.bill += "Base Price of the Pizza: ";
-        this.bill += isVeg? Integer.toString(300): Integer.toString(400);
-        this.bill += "\n";
-        this.bill += extraCheese?  "Extra Cheese Added: " + Integer.toString(80) : bill;
-        this.bill += "\n";
+        bill += "Base Price of the Pizza: ";
+        bill += isVeg? Integer.toString(300): Integer.toString(400);
+        bill += "\n";
+        bill += extraCheese?  "Extra Cheese Added: " + Integer.toString(80) : bill;
+        bill += "\n";
         if(extraTopping) {
-            this.bill += "Extra Toppings Added: ";
+            bill += "Extra Toppings Added: ";
             if(isVeg) {
-                this.bill += Integer.toString(70);
+                bill += Integer.toString(70);
             } else {
-                this.bill += Integer.toString(120);
+                bill += Integer.toString(120);
             }
         }
-        this.bill += "\n";
-        this.bill += takeAway? "Paperbag Added: " + Integer.toString(20): bill;
-        this.bill += "\n";
-        this.bill += "Total Price: " + Integer.toString(price);
-        return this.bill;
+        bill += "\n";
+        bill += takeAway? "Paperbag Added: " + Integer.toString(20): bill;
+        bill += "\n";
+        bill += "Total Price: " + Integer.toString(price);
+        isBill = true;
+        return bill;
     }
 }
