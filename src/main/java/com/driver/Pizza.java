@@ -8,6 +8,7 @@ public class Pizza {
     private Boolean extraCheese;
     private Boolean extraTopping;
     private Boolean takeAway;
+    private Boolean pizza = false;
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
@@ -46,6 +47,8 @@ public class Pizza {
 
     public String getBill(){
         // your code goes
+        if(pizza==true) return "";
+
         this.bill += "Base Price of the Pizza: ";
         this.bill += isVeg? Integer.toString(300): Integer.toString(400);
         this.bill += "\n";
